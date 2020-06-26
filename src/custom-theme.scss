@@ -1,0 +1,18 @@
+@import '../node_modules/@angular/material/theming';
+@import 'app/app.component.scss';
+
+@include mat-core();
+
+$custom-theme-primary: mat-palette($mat-pink);
+$custom-theme-accent: mat-palette($mat-blue, A200, A100, A400);
+$custom-theme-warn: mat-palette($mat-red);
+$custom-theme-background: #000;
+
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+@mixin custom-theme($theme) {
+  @include nav-link-theme($theme);
+}
+
+@include angular-material-theme($custom-theme);
+@include custom-theme($custom-theme);

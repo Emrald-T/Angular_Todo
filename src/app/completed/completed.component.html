@@ -1,0 +1,7 @@
+<div class="container">
+  <mat-list #todoList role="list">
+    <mat-list-item role="list-item" *ngFor="let item of completedItems">
+      <div matLine><del>{{item.task}}</del></div>
+    </mat-list-item>
+  </mat-list>
+</div>

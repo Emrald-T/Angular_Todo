@@ -1,0 +1,60 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.mat-toolbar-row,
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@mixin nav-link-theme($theme) {
+
+  $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .mat-toolbar-row {
+    nav {
+      height: 100%;
+      display: flex;
+
+      ul {
+        list-style-type: none;
+        margin: auto 0;
+        padding: 0;
+        height: inherit;
+        display: inherit;
+        align-items: center;
+
+        li {
+          margin: auto;
+          height: inherit;
+          display: inherit;
+
+          a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #fff;
+            padding: 0 1em;
+            display: inherit;
+            align-items: center;
+
+            &:hover {
+              background: darken(mat-color($primary), 10%);
+            }
+          }
+
+          a.active {
+            color: rgb(255, 215, 0);
+          }
+        }
+      }
+    }
+  }
+}
